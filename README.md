@@ -1,10 +1,17 @@
-# ***Smart Product Pricing Challenge — A Multimodal ML Solution***  
+# ***Smart Product Pricing Challenge - A Multimodal ML Solution***  
 
-![Python](https://img.shields.io/badge/python-3.10%2B-blue?logo=python)
-![PyTorch](https://img.shields.io/badge/PyTorch-2.2%2B-EE4C2C?logo=pytorch)
-![LightGBM](https://img.shields.io/badge/LightGBM-3.3%2B-green?logo=lightgbm)
-![HuggingFace](https://img.shields.io/badge/HuggingFace-Transformers-yellow?logo=huggingface)
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/PyTorch-2.2%2B-EE4C2C?logo=pytorch&logoColor=white" />
+  <img src="https://img.shields.io/badge/LightGBM-3.3%2B-006400?logo=lightgbm&logoColor=white" />
+  <img src="https://img.shields.io/badge/HuggingFace-Transformers-yellow?logo=huggingface&logoColor=black" />
+  <img src="https://img.shields.io/badge/SentenceTransformers-1.2+-orange?logo=huggingface&logoColor=black" />
+  <img src="https://img.shields.io/badge/Scikit--learn-1.5%2B-F7931E?logo=scikitlearn&logoColor=white" />
+  <img src="https://img.shields.io/badge/Numpy-1.24%2B-013243?logo=numpy&logoColor=white" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  <img src="https://img.shields.io/badge/Status-Completed-success" />
+</p>
 
 ---
 
@@ -18,7 +25,7 @@
 
 ## ***1. Project Overview*** 
 
-This repository presents our **end-to-end multimodal solution** for the *Amazon ML Challenge 2025 – Smart Product Pricing*.  
+This repository presents our **end-to-end multimodal solution** for the *Amazon ML Challenge 2025 - Smart Product Pricing*.  
 The goal was to build a model that predicts e-commerce product prices using both **textual descriptions** and **product images**, without any external reference data.
 
 Our final approach fuses **deep image embeddings**, **semantic text representations**, and **tree-based modeling** with **SMAPE-aware ensembling**, achieving a **final cross-validated SMAPE of 48.94**.
@@ -50,7 +57,7 @@ Our final approach fuses **deep image embeddings**, **semantic text representati
 
 ### 3.2 Multimodal Feature Engineering  
 
-#### **Visual Feature Pipeline — Dual CNN Ensemble**
+#### **Visual Feature Pipeline - Dual CNN Ensemble**
 
 | Model | Architecture | Pretrained On | Output Dim | Purpose |
 |--------|---------------|----------------|--------------|-----------|
@@ -65,7 +72,7 @@ Our final approach fuses **deep image embeddings**, **semantic text representati
 
 ---
 
-#### **Textual Feature Pipeline — Hybrid Representation**
+#### **Textual Feature Pipeline - Hybrid Representation**
 
 | Component | Technique | Dimensionality | Purpose |
 |------------|------------|----------------|-----------|
@@ -94,23 +101,20 @@ The concatenation of structured, sparse, and dense text features provided a **ri
 
 ## ***4. Repository Structure***
 
-.
-├── data/               # Raw CSV data files (train.csv, test.csv)
-├── notebooks/          # Jupyter notebooks for EDA, advanced analysis, and visualization
-├── src/                # All production-ready Python source code for the pipeline
-│   ├── config.py       # Centralized configuration parameters and file paths
-│   ├── download_data.py  # Script for parallel image data ingestion
-│   ├── feature_engineering.py # Script for multimodal (image & text) feature generation
-│   ├── train.py        # Script for LightGBM model training with CV, OOF generation, and model persistence
-│   ├── predict.py      # Script for loading trained models and generating raw predictions
-│   └── blend_models.py # Script for ensembling multiple model predictions with optimized weights
-│
-├── models/             # Directory for persisted trained model artifacts (e.g., .pkl, .pth files)
-├── submissions/        # Directory for final submission files
-├── predicted_values_csv/ # Store individual model OOF and test predictions for ensembling
-├──.gitignore          # Specifies files and folders to be ignored by Git
-├── README.md           # This comprehensive project documentation
-└── requirements.txt    # Python package dependencies
+```
+├── data/               			# Raw CSV data files (train.csv, test.csv)
+├── notebooks/          			# Jupyter notebooks for EDA, advanced analysis, and visualization
+├── src/                			# All production-ready Python source code for the pipeline
+│   ├── config.py       			# Centralized configuration parameters and file paths
+│   ├── download_data.py  			# Script for parallel image data ingestion
+│   ├── feature_engineering.py 		# Script for multimodal (image & text) feature generation
+│   ├── train.py        			# Script for LightGBM model training with CV, OOF generation, and model persistence
+│   ├── predict.py      			# Script for loading trained models and generating raw predictions
+│   └── blend_models.py 			# Script for ensembling multiple model predictions with optimized weights
+├──.gitignore          				# Specifies files and folders to be ignored by Git
+├── README.md           			# This comprehensive project documentation
+└── requirements.txt    			# Python package dependencies
+```
 
 ---
 
@@ -154,10 +158,10 @@ python src/predict.py
 
 ## ***6. Key Insights***
 
-• Multimodal fusion (text + vision) enhances model robustness.
-•	Metric-aware transformations yield more consistent leaderboard performance.
-•	Combining **architectural diversity (CNN + Transformer)** reduces overfitting.
-•	Rigorous CV discipline ensures generalization beyond leaderboard noise.
+* Multimodal fusion (text + vision) enhances model robustness.
+* Metric-aware transformations yield more consistent leaderboard performance.
+* Combining **architectural diversity (CNN + Transformer)** reduces overfitting.
+* Rigorous CV discipline ensures generalization beyond leaderboard noise.
 
 ---
 
