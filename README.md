@@ -30,7 +30,7 @@ The goal was to build a model that predicts e-commerce product prices using both
 
 Our final approach fuses **deep image embeddings**, **semantic text representations**, and **tree-based modeling** with **SMAPE-aware ensembling**, achieving a **final cross-validated SMAPE of 48.94**.
 
-To promote reproducibility, all **trained model artifacts**, **feature embeddings**, and **CNN checkpoints** are available under the repository’s **[Releases section](../../releases)**:
+To promote reproducibility, all **trained model artifacts**, **feature embeddings**, and **CNN checkpoints** are available under the repository’s **[Releases](../../releases)**:
 - `image_model.zip` – pre-trained EfficientNet-B2 and ConvNeXt-Tiny weights  
 - `embeddings.zip` – precomputed image and text embeddings  
 
